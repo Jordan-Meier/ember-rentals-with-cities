@@ -1,1 +1,10 @@
-{{yield}}
+<h1>{{city.name}}</h1>
+
+<h3>Rentals available in {{city.name}}:</h3>
+{{#each city.rentals as |rental|}}
+  <li>
+    {{#link-to 'rental' rental.id}}{{rental.owner}}'s {{rental.type}} in {{rental.city.name}}{{/link-to}}
+  </li>
+{{/each}}
+
+{{#link-to 'index'}}Home{{/link-to}}
